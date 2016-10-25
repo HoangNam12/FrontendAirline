@@ -7,7 +7,7 @@
         {
             return $http({
                 method: "get",
-                url: "http://localhost:33790/Flights/ChangBays",
+                url: "http://flightreservation-1.apphb.com/Flights/ChangBays",
             }).success(function (sur) {
                 return sur.data
             });
@@ -17,7 +17,7 @@
         {
             return $http({
                 method: "post",
-                url: "http://localhost:33790/Flights/ThemChangBay",
+                url: "http://flightreservation-1.apphb.com/Flights/ThemChangBay",
                 params:
                     {
                         noidi: noidi,

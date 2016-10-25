@@ -6,7 +6,7 @@
         this.GetNumberPerson = function (IdBooking) {
             return $http({
                 method: "get",
-                url: "http://localhost:33790/Bookings/GetNumberPassenger?IdBooking="+IdBooking,
+                url: "http://flightreservation-1.apphb.com/Bookings/GetNumberPassenger?IdBooking="+IdBooking,
             }).success(function (sur) {
                 return sur.data;
             });
@@ -14,7 +14,7 @@
         this.GetNumberPerson = function (IdBooking) {
             return $http({
                 method: "get",
-                url: "http://localhost:33790/Bookings/GetNumberPassenger?IdBooking=" + IdBooking,
+                url: "http://flightreservation-1.apphb.com/Bookings/GetNumberPassenger?IdBooking=" + IdBooking,
             }).success(function (sur) {
                 return sur.data;
             });
@@ -24,7 +24,7 @@
             
             return $http({
                 method: "get",
-                url: "http://localhost:33790/Bookings/DetailFlightBooking?IdBooking=" + IdBooking,
+                url: "http://flightreservation-1.apphb.com/Bookings/DetailFlightBooking?IdBooking=" + IdBooking,
             }).success(function (sur) {
                 return sur.data;
             });
@@ -33,7 +33,7 @@
         {
             return $http({
                 method: "GET",
-                url: "http://localhost:33790/Bookings/Confirm",
+                url: "http://flightreservation-1.apphb.com/Bookings/Confirm",
                 params: {
                     IdBooking: IdBooking,
                     StateBooking: 1,
@@ -47,7 +47,7 @@
         this.NewPassengers = function (IdBooking, DanhXung, Ho, Ten) {
             return $http({
                 method: "post",
-                url: "http://localhost:33790/Passengers/NewPassengers",
+                url: "http://flightreservation-1.apphb.com/Passengers/NewPassengers",
                 params: {
                     IdBooking: IdBooking,
                     DanhXung: DanhXung,
