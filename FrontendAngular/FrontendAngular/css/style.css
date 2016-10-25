@@ -1,0 +1,45 @@
+﻿.color_red {
+    background: #ed1c24;
+}
+.color_blue {
+    background: #26abd1;
+}
+.nav > li > a {
+    color: #ffffff;
+    border-right: 1px solid #CC1818;
+}
+.nav > li:first-child > a {
+    border-left: 1px solid #CC1818;
+}
+.nav > li > a:hover, .nav > li > a:focus{
+    text-decoration: none;
+    background-color: #ca181f;
+}
+.active {
+    background-color: #ca181f;
+}
+.navbar-brand {
+    color: #ffffff !important;
+    border-right: 1px solid #CC1818 !important;
+    border-left: 1px solid #CC1818 !important;
+    text-decoration: none;
+    background-color: #ca181f;
+}
+tr > th {
+    color: #ffffff;
+}
+div > label {
+    color: #26abd1 !important;
+}
+.panel-title {
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 24px;
+}
+.title {
+    color: #11c636;
+}
+.caption {
+    font-family: "Times New Roman";
+    font-size: 25px;
+    color: #073193;
+}

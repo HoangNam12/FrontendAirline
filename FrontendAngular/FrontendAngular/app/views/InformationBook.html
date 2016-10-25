@@ -1,0 +1,71 @@
+﻿<h1 class="text-left title">Đặt chỗ</h1>
+<br />
+<form ng-show="choiceFlight">
+    <h2>Chọn chuyến bay trước khi đặt vé!</h2>
+</form>
+<form ng-show="choiceBooking">
+    <fieldset>
+        <legend>Xác nhận thông tin đặt chổ</legend>
+        <div>
+            <h3>Thông tin hành khách</h3>
+            <div layout="column" flex="40">
+                <div ng-repeat="item in items" layout="row" flex="100" >
+                    <md-input-container flex="20">
+                        <label style="font-size:23px">Danh xưng</label>
+                        <md-select ng-model="item.typePersonal">
+                            <md-option value="mr">Mr.</md-option>
+                            <md-option value-="ms">Ms.</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container flex="20" >
+                        <label>Họ</label>
+                        <input ng-model="item.preNamePersonal" />
+                    </md-input-container>
+                    <md-input-container flex="65" >
+                        <label>Tên hành khách</label>
+                        <input ng-model="item.namePersonal"/>
+                    </md-input-container>
+                </div>
+            </div>
+            <h3>Chi tiết chuyến bay</h3>
+            <div class="row">
+                <table class="table table-bordered table-hover table-striped table_border">
+                    <thead>
+                        <tr class="color_blue font table_border">
+                            <th>Mã chuyến bay</th>
+                            <th>Nơi đi</th>
+                            <th>Nơi đến</th>
+                            <th>Ngày</th>
+                            <th>Giờ</th>
+                            <th>Hạng</th>
+                            <th>Mức giá</th>                
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in listFlightDetail">
+                            <td>{{item.Id}}</td>
+                            <td>{{item.NoiDi}}</td>
+                            <td>{{item.NoiDen}}</td>
+                            <td>{{item.Ngay}}</td>
+                            <td>{{item.Gio}}</td>
+                            <td>{{item.Hang}}</td>
+                            <td>{{item.MucGia}}</td>
+                            <td>{{item.SoLuong}}</td>
+                            <td>{{item.TongGia}}</td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="row text-center">
+                <input class="btn btn-success" type="button" value="Xác nhận" style="margin: 30px;" ng-click="xacNhan($event)" />
+            </div>
+        </div>
+       
+    </fieldset>
+</form>
+<p style="color:red">(*)Ghế được đặt được giữ trong 5p</p>

@@ -1,0 +1,46 @@
+﻿
+<form name="userForm" novalidate>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <b>Register</b>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row" ng-class="{ 'has-error' : (userForm.Username.$invalid || vm.existedEmail) && !userForm.Username.$pristine }">
+                <div class="col-md-1"></div>
+                <label class="col-md-2">Email</label>
+                <div class="col-md-4">
+                    <input class=" form-control" type="email" name="Username" ng-model="vm.newregister.Username" required />
+                </div>
+                <div ng-show="userForm.Username.$error.email" class="help-block col-md-5">Enter a valid email.</div>
+                <div ng-show="vm.existedEmail" class="help-block col-md-5">The Email is already in use.</div>
+            </div>
+            <br />
+            <div class="row" ng-class="{ 'has-error' : userForm.Password.$invalid && !userForm.Password.$pristine }">
+                <div class="col-md-1"></div>
+                <label class="col-md-2">Password</label>
+                <div class="col-md-4">
+                    <input class=" form-control" type="password" name="Password" ng-model="vm.newregister.Password" required />
+                </div>
+                <div ng-show="userForm.Password.$invalid && !userForm.Password.$pristine" class="help-block col-md-5">Your Password is required.</div>
+            </div>
+            <br />
+            <div class="row" ng-class="{ 'has-error' : userForm.ConfirmPassword.$invalid && !userForm.ConfirmPassword.$pristine }">
+                <div class="col-md-1"></div>
+                <label class="col-md-2">Confirm Password</label>
+                <div class="col-md-4">
+                    <input class=" form-control" type="password" name="ConfirmPassword" ng-model="vm.newregister.ConfirmPassword" required compare-to="vm.newregister.Password" />
+                </div>
+                <div ng-show="userForm.ConfirmPassword.$error.compareTo" class="help-block col-md-5">Your Field does not match the password.</div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+                    <button id="dangky" class="btn btn-primary" ng-disabled="userForm.$invalid" value="Register" ng-click="vm.registerUser()">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

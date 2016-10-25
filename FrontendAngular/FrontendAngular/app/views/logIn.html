@@ -1,0 +1,41 @@
+﻿
+<form name="userForm" novalidate>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><b>Log In</b></h3>
+        </div>
+        <div class="panel-body">
+            <div class="row" ng-class="{ 'has-error' : userForm.Username.$invalid && !userForm.Username.$pristine }">
+                <div class="col-md-1"></div>
+                <label class="col-md-2">Username</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="Username" ng-model="Username" required />
+                </div>
+                <p ng-show="userForm.Username.$invalid && !userForm.Username.$pristine" class="help-block">Your Username is required.</p>
+            </div>
+            <br />
+            <div class="row" ng-class="{ 'has-error' : userForm.Password.$invalid && !userForm.Password.$pristine }">
+                <div class="col-md-1"></div>
+                <label class="col-md-2">Password</label>
+                <div class="col-md-4">
+                    <input class=" form-control" type="password" name="Password" ng-model="Password" required />
+                </div>
+                <p ng-show="userForm.Password.$invalid && !userForm.Password.$pristine" class="help-block">Your Password is required.</p>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+                    <a href="http://localhost:57460/index.html#/register">Register</a> | <a>Forgot Password</a>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9">
+                    <button id="dangnhap" class="btn btn-primary" ng-disabled="userForm.$invalid" value="Log In" ng-click="logIn($event)">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

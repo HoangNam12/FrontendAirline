@@ -1,0 +1,87 @@
+﻿
+<div class="container">
+    <div>
+        <h1 class="text-center">Chặng Bay</h1>
+        <br />
+        <hr />
+        <table class="table table-bordered table-hover table-striped table_border">
+            <thead>
+                <tr class="color_blue font table_border">
+                    <th>Nơi đi</th>
+                    <th>Nơi đến</th>
+                    <th>Ngày</th>
+                    <th>Giờ</th>
+                    <th>Hạng</th>
+                    <th>Mức giá</th>
+                    <th>Số lượng ghế</th>
+                    <th>Giá bán</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in dataChangBay">
+                    <td>{{item.NoiDi}}</td>
+                    <td>{{item.NoiDen}}</td>
+                    <td>{{item.Ngay}}</td>
+                    <td>{{item.Gio}}</td>
+                    <td>{{item.Hang}}</td>
+                    <td>{{item.MucGia}}</td>
+                    <td>{{item.SoLuongGhe}}</td>
+                    <td>{{item.GiaBan}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div>
+
+        <button ng-click="AddFormChangBay()">Thêm chặng bay</button>
+        <div clayout="row" ng-show="FromAddChangBay">
+            <div class="row">
+                <label class="col-md-2">Nơi đi</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="noidi" ng-model="noidi" />
+                </div>
+
+                <label class="col-md-2">Nơi đến</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="noiden" ng-model="noiden" />
+                </div>
+
+                <label class="col-md-2">Ngày</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="date" name="ngay" ng-model="ngaydi">
+                </div>
+
+                <label class="col-md-2">Giờ</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="gio" ng-model="gio" />
+                </div>
+
+                <label class="col-md-2">Hạng</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="hang" ng-model="hang" />
+                </div>
+
+                <label class="col-md-2">Mức giá</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="mucgia" ng-model="mucgia" />
+                </div>
+
+                <label class="col-md-2">Số lượng ghế</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="soluongghe" ng-model="soluongghe" />
+                </div>
+
+                <label class="col-md-2">Giá bán</label>
+                <div class="col-md-4">
+                    <input class="form-control" type="text" name="giaban" ng-model="giaban" />
+                </div>
+
+                <button ng-click="AddChangBay($event)">Submit</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Info Website</title>
+
+</head>
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+<body ng-app="myApp">
+
+    <header>
+        <nav class="navbar navbar-light color_red">
+            <div class="container">
+                <ul class="nav navbar-nav navbar-left">
+                    <li ui-sref-active="active"><a ui-sref="home"><i class="fa fa-home"></i> &nbsp;Trang Chủ</a></li>
+                    <li ui-sref-active="active"><a ui-sref="findflight"><i class="fa fa fa-fighter-jet"></i> &nbsp;Thông tin chuyến bay</a></li>
+                    <li ui-sref-active="active"><a ui-sref="booking"><i class="fa fa-plane"></i> &nbsp;Đặt chỗ</a></li>
+                    <li ui-sref-active="active" layout-align="end"><a ui-sref="login"><i class="fa fa-book"></i> &nbsp;Quản lí</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div id="main">
+
+            <div ui-view></div>
+
+        </div>
+    </div>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/directives/compareToDirective.js"></script>
+    <script src="app/controllers/infoController.js"></script>
+    
+    <script src="app/controllers/findFlightController.js"></script>
+    
+    <script src="app/controllers/logInController.js"></script>
+    <script src="app/controllers/informationBookController.js"></script>
+    <script src="app/controllers/ChangBayController.js"></script>
+    <script src="app/services/findFlightService.js"></script>
+
+    <script src="app/services/informationBookService.js"></script>
+    <script src="app/services/AdminService.js"></script>
+    
+</body>
+</html>

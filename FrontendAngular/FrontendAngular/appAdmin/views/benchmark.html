@@ -1,0 +1,31 @@
+﻿
+<div>
+    <h1 class="text-center">Benchmark Page</h1>
+    <br />
+    <div class="row">
+        <div class="col-md-8"></div>
+        <div class="col-md-2"><select class="form-control col-md-2" ng-model="vm.selectedYear" ng-selected="vm.selectedYear" ng-options="year for year in vm.years" ng-change="vm.Update()"></select></div>
+        <div class="col-md-2"><button class="btn btn-primary" value="Lưu" ng-click="vm.addYear()"><i class="fa fa-plus-square" aria-hidden="true"></i> Thêm Năm</button></div>
+    </div>
+    <hr />
+    <table class="table table-bordered table-hover table-striped table_border">
+        <thead>
+            <tr class="color_blue font table_border">
+                <th>Mã Ngành</th>
+                <th>Tên ngành</th>
+                <th>Điểm Chuẩn</th>
+                <th>Chỉ Tiêu</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="benchmark in vm.listBenchmark">
+                <td>{{ benchmark.Code }}</td>
+                <td>{{ benchmark.Name }}</td>
+                <td><input class="form-control" value="{{ benchmark.Mark }}" ng-model="benchmark.Mark" /></td>
+                <td><input class="form-control" value="{{ benchmark.Quantity }}" ng-model="benchmark.Quantity" /></td>
+                <td style="text-align: center"><button class="btn btn-primary" value="Lưu" ng-click="vm.saveChange(benchmark)"><i class="fa fa-floppy-o" aria-hidden="true"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

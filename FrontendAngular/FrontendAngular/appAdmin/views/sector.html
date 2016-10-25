@@ -1,0 +1,36 @@
+﻿
+<div>
+    <h1 class="text-center">Sector Page</h1>
+    <br />
+    <div class="row">
+        <div class="col-md-1">Code</div>
+        <div class="col-md-3">
+            <input class=" form-control" type="text" name="SectorCode" ng-model="vm.newsector.Code"/>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1">Name</div>
+        <div class="col-md-4">
+            <input class=" form-control" type="text" name="SectorName" ng-model="vm.newsector.Name" />
+        </div>
+        <div class="col-md-2"><button class="btn btn-primary" value="Thêm" ng-click="vm.addSector()"><i class="fa fa-plus-square" aria-hidden="true"></i> Add</button></div>
+    </div>
+    <hr />
+    <table class="table table-bordered table-hover table-striped table_border">
+        <thead>
+            <tr class="color_blue font table_border">
+                <th>Mã Ngành</th>
+                <th>Tên ngành</th>
+                <th width="15%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="sector in vm.listSector">
+                <td><input class="form-control" value="{{ sector.Code }}" ng-model="sector.Code" /></td>
+                <td><input class="form-control" value="{{ sector.Name }}" ng-model="sector.Name" /></td>
+                <th style="text-align: center">
+                    <button class="btn btn-danger" value="Xóa" ng-click="vm.deleteSector(sector)"><i class="fa fa-trash" aria-hidden="true"></i></button> | <button class="btn btn-primary" value="Lưu" ng-click="vm.saveSector(sector)"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>

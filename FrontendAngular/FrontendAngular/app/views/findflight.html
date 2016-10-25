@@ -1,0 +1,185 @@
+﻿
+<div class="container">
+    <div>
+        <h1 class="text-left title">Thông tin chuyến bay</h1>
+        <br />
+        <!--<div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2"><select class="form-control col-md-2" ng-model="vm.selectedYear" ng-selected="vm.selectedYear" ng-options="year for year in vm.years" ng-change="vm.Update()"></select></div>
+        </div>
+        <hr />-->
+        <!--<table class="table table-bordered table-hover table-striped table_border">
+            <thead>
+            <tr class="color_blue font table_border">
+                <th>Mã Ngành</th>
+                <th>Tên ngành</th>
+                <th>Điểm Chuẩn</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="benchmark in vm.listBenchmark">
+                    <td>{{ benchmark.Code }}</td>
+                    <td>{{ benchmark.Name }}</td>
+                    <td>{{ benchmark.Mark }}</td>
+                </tr>
+            </tbody>
+        </table>-->
+        
+        <div class="row" style="min-height: 100px;">
+            <div class="col-md-6">
+                <md-input-container style="margin-right: 10px;">
+                    <label style="font-size:23px">Sân bay đến</label>
+                    <md-select ng-model="SbDi" style="width:150px">
+                        <md-option ng-repeat="item in listSBD" ng-click="getSanBayDen(item)" value="{{item}}">
+                            
+                            {{item}}
+                        </md-option>
+
+
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div class="col-md-6">
+                <md-input-container style="margin-right: 10px;">
+                    <label style="font-size:23px">Sân Bay Đến</label>
+                    <md-select ng-model="SbDen" style="width:150px">
+                        <md-option ng-repeat="item in listSanBayDen" ng-click="clickSanByDen(item)" value="{{item}}">
+                            {{item}}
+                        </md-option>
+
+
+                    </md-select>
+                </md-input-container>
+                
+            </div>
+        </div>
+        <div class="row" style="min-height:70px">
+            <div class="col-md-6">
+                
+                    
+                    <md-input-container style="margin-right: 10px;">
+                        <label style="font-size:23px">Số lượng người</label>
+                        <md-select ng-model="SlNguoi" style="width:150px">
+                            <md-option ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]" value="{{i}}">
+                                {{i}}
+                            </md-option>
+
+
+                        </md-select>
+                   </md-input-container>
+
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <md-radio-group ng-model="typeFlight" layout="row" style="border: none;outline:none;">
+
+                        <md-radio-button  value="motchieu" ng-click="clickMotChieu()" style="border: none; outline:none;  ">
+                            Một chiều </md-radio-button>
+                        <md-radio-button  value="khuhoi" ng-click="clickKhuHoi()" style="border: none;  outline:none;  ">
+                            Khứ hồi
+                        </md-radio-button>
+
+                    </md-radio-group>
+                  
+                </form>
+            </div>
+        </div>
+            
+        <form action="#">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="caption">Ngày đi</div>
+                    <input class="form-control" type="date" name="bday" ng-model="NgayDi">
+                </div>
+
+                <div class="col-md-6" ng-show="visibleNgayVe">
+                    <div class="caption">Ngày về</div>
+                    <input class="form-control" type="date" name="bday" ng-model="NgayVe">
+                </div>
+        </div>
+            <div class="row text-center">
+                <input class="btn btn-danger" type="button" value="Tìm kiếm" style="margin: 30px;" ng-click="findFlight($event)"/>
+            </div>
+        </form>
+        <h3 ng-show="chuyendiVisible">Lựa chọn chuyến bay đi</h3>
+        <md-radio-group ng-model="itemChuyenDi">
+            <div class="row" ng-show="chuyendiVisible">
+                <table class="table table-bordered table-hover table-striped table_border">
+                    <thead>
+                        <tr class="color_blue font table_border">
+                            <th>Mã chuyến bay</th>
+                            <th>Nơi đi</th>
+                            <th>Nơi đến</th>
+                            <th>Ngày</th>
+                            <th>Giờ</th>
+                            <th>Hạng</th>
+                            <th>Mức giá</th>
+                            <th>Số lượng ghế</th>
+                            <th>Giá bán</th>
+                            <th>Lựa chọn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in dataJSON1">
+                            <td>{{item.Id}}</td>
+                            <td>{{item.NoiDi}}</td>
+                            <td>{{item.NoiDen}}</td>
+                            <td>{{item.Ngay}}</td>
+                            <td>{{item.Gio}}</td>
+                            <td>{{item.Hang}}</td>
+                            <td>{{item.MucGia}}</td>
+                            <td>{{item.SoLuongGhe}}</td>
+                            <td>{{item.GiaBan}}</td>
+                            <td><md-radio-button value="{{item}}"></md-radio-button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </md-radio-group>
+        <h3 ng-show="chuyenveVisible">Lựa chọn chuyến bay về</h3>
+        <md-radio-group ng-model="itemChuyenVe">
+            <div class="row" ng-show="chuyenveVisible">
+                <table class="table table-bordered table-hover table-striped table_border">
+                    <thead>
+                        <tr class="color_blue font table_border">
+                            <th>Mã chuyến bay</th>
+                            <th>Nơi đi</th>
+                            <th>Nơi đến</th>
+                            <th>Ngày</th>
+                            <th>Giờ</th>
+                            <th>Hạng</th>
+                            <th>Mức giá</th>
+                            <th>Số lượng ghế</th>
+                            <th>Giá bán</th>
+                            <th>Lựa chọn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr ng-repeat="benchmark in vm.listBenchmark">
+                        <td>{{ benchmark.Code }}</td>
+                        <td>{{ benchmark.Name }}</td>
+                        <td>{{ benchmark.Mark }}</td>
+                    </tr>-->
+                        <tr ng-repeat="item in dataJSON2">
+                            <td>{{item.Id}}</td>
+                            <td>{{item.NoiDi}}</td>
+                            <td>{{item.NoiDen}}</td>
+                            <td>{{item.Ngay}}</td>
+                            <td>{{item.Gio}}</td>
+                            <td>{{item.Hang}}</td>
+                            <td>{{item.MucGia}}</td>
+                            <td>{{item.SoLuongGhe}}</td>
+                            <td>{{item.GiaBan}}</td>
+                            <td><md-radio-button value="{{item}}"></md-radio-button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </md-radio-group>
+        <div class="row text-center">
+            <input class="btn btn-success" ng-show="buttonBooking" type="button" value="Đặt chổ" style="margin: 30px;" ng-click="datCho($event)" />
+        </div>
+</div>
+</div>
+
