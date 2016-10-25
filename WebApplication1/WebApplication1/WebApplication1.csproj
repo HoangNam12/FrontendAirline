@@ -278,6 +278,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\spin.js" />
+    <Content Include="Scripts\style.css" />
     <Content Include="Scripts\svg-assets-cache.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
