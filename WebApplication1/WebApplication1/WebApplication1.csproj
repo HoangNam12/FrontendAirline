@@ -212,6 +212,12 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\css\font-awesome.css.map" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -249,7 +255,10 @@
     <Content Include="Scripts\bootstrap.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\css\font-awesome.css" />
+    <Content Include="Scripts\css\font-awesome.min.css" />
     <Content Include="Scripts\firebase.js" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.svg" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -278,6 +287,34 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Scripts\less\animated.less" />
+    <Content Include="Scripts\less\bordered-pulled.less" />
+    <Content Include="Scripts\less\core.less" />
+    <Content Include="Scripts\less\fixed-width.less" />
+    <Content Include="Scripts\less\font-awesome.less" />
+    <Content Include="Scripts\less\icons.less" />
+    <Content Include="Scripts\less\larger.less" />
+    <Content Include="Scripts\less\list.less" />
+    <Content Include="Scripts\less\mixins.less" />
+    <Content Include="Scripts\less\path.less" />
+    <Content Include="Scripts\less\rotated-flipped.less" />
+    <Content Include="Scripts\less\screen-reader.less" />
+    <Content Include="Scripts\less\stacked.less" />
+    <Content Include="Scripts\less\variables.less" />
+    <Content Include="Scripts\scss\font-awesome.scss" />
+    <Content Include="Scripts\scss\_animated.scss" />
+    <Content Include="Scripts\scss\_bordered-pulled.scss" />
+    <Content Include="Scripts\scss\_core.scss" />
+    <Content Include="Scripts\scss\_fixed-width.scss" />
+    <Content Include="Scripts\scss\_icons.scss" />
+    <Content Include="Scripts\scss\_larger.scss" />
+    <Content Include="Scripts\scss\_list.scss" />
+    <Content Include="Scripts\scss\_mixins.scss" />
+    <Content Include="Scripts\scss\_path.scss" />
+    <Content Include="Scripts\scss\_rotated-flipped.scss" />
+    <Content Include="Scripts\scss\_screen-reader.scss" />
+    <Content Include="Scripts\scss\_stacked.scss" />
+    <Content Include="Scripts\scss\_variables.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="appAdmin\" />
