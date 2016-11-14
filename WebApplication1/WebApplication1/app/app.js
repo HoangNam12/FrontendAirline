@@ -1,4 +1,4 @@
-﻿var app = angular.module("myApp", ['ngMaterial', 'ui.router', 'firebase', 'LocalStorageModule']);
+﻿var app = angular.module("myApp", ['ngMaterial', 'ui.router', 'firebase', 'LocalStorageModule', 'ngCookies']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     
@@ -83,4 +83,30 @@ app.constant('appSetting', {
     groupA: 'Toán-Lý-Hóa',
     groupA1: 'Toán-Lý-Tiếng Anh',
     groupB: 'Toán-Sinh-Hóa'
+});
+app.factory('httpInterceptor', function ($q, $rootScope, $log) {
+    return {
+        request: function (config) {
+            return config || $q.when(config)
+        },
+        response: function (response) {
+            return response || $q.when(response);
+        },
+        responseError: function (response) {
+            if (response.status === 401) {
+                //here I preserve login page 
+                
+                $rootScope.$broadcast('error')
+            }
+            if (response.status === 500) {
+                //here I preserve login page 
+
+                $rootScope.$broadcast('error')
+            }
+            return $q.reject(response);
+        }
+    };
+})
+.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('httpInterceptor');
 });

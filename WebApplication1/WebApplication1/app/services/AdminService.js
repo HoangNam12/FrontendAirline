@@ -3,21 +3,89 @@
 
 
     angular.module("myApp").service("AdminService", function ($http) {
-        this.GetChangBay = function ()
+        this.checkToken = function (token)
+        {
+           
+                return $http({
+                    method: "get",
+                    url: "http://localhost:33790/api/v1/session/checktoken",
+                    params:{
+                        token: token
+                    }
+                }).success(function (sur) {
+                    return sur.data
+                }).error(function () {
+
+                });
+           
+        }
+        this.GetChangBay = function (token)
         {
             return $http({
+                headers:{
+                    Token:token
+                },
                 method: "get",
-                url: "http://flightreservation-1.apphb.com/Flights/ChangBays",
+                url: "http://localhost:33790/api/v1/Flights/ChangBays",
+            }).success(function (sur) {
+                return sur.data
+            });
+        }
+        this.deleteFlight = function (token,Id, Ngay, Hang, MucGia)
+        {
+            return $http({
+                headers: {
+                    Token: token
+                },
+                method: "delete",
+                url: "http://localhost:33790/api/v1/Flights/AbolitionFlight",
+                params:
+                    {
+                        Id: Id,
+                        Ngay: Ngay,
+                        Hang: Hang,
+                        MucGia:MucGia
+                    }
             }).success(function (sur) {
                 return sur.data
             });
         }
 
-        this.AddChangBay = function (noidi, noiden, ngay, gio, hang, mucgia, soluongghe, giaban)
+        this.updateFlight = function (token,idc, ngayc, hangc, mucgiac, id, noidi, noiden, ngay, gio, hang, mucgia, soluonghe, giaban) {
+            return $http({
+                headers: {
+                    Token: token
+                },
+                method: "put",
+                url: "http://localhost:33790/api/v1/Flights/UpdateFlight",
+                params:
+                    {
+                        IdC: idc,
+                        NgayC: ngayc,
+                        HangC: hangc,
+                        MucGiaC:mucgiac,
+                        Id: id,
+                        NoiDi:noidi,
+                        NoiDen:noiden,
+                        Ngay:ngay,
+                        Gio:gio,
+                        Hang:hang,
+                        MucGia:mucgia,
+                        SoLuongGhe: soluonghe,
+                        GiaBan:giaban
+                    }
+            }).success(function (sur) {
+                return sur.data
+            });
+        }
+        this.AddChangBay = function (token,noidi, noiden, ngay, gio, hang, mucgia, soluongghe, giaban)
         {
             return $http({
+                headers: {
+                    Token: token
+                },
                 method: "post",
-                url: "http://flightreservation-1.apphb.com/Flights/ThemChangBay",
+                url: "http://localhost:33790/api/v1/Flights/ThemChangBay",
                 params:
                     {
                         noidi: noidi,

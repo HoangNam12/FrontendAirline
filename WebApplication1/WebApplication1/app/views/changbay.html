@@ -15,18 +15,22 @@
                     <th>Mức giá</th>
                     <th>Số lượng ghế</th>
                     <th>Giá bán</th>
+                    <th>Xóa</th>
+                    <th>Sửa</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="item in dataChangBay">
-                    <td>{{item.NoiDi}}</td>
-                    <td>{{item.NoiDen}}</td>
+                    <td>{{item.NoiDi.trim()}}</td>
+                    <td>{{item.NoiDen.trim()}}</td>
                     <td>{{item.Ngay}}</td>
                     <td>{{item.Gio}}</td>
-                    <td>{{item.Hang}}</td>
-                    <td>{{item.MucGia}}</td>
+                    <td>{{item.Hang.trim()}}</td>
+                    <td>{{item.MucGia.trim()}}</td>
                     <td>{{item.SoLuongGhe}}</td>
                     <td>{{item.GiaBan}}</td>
+                    <td><a style="text-decoration:underline;cursor:pointer;color:blue" ng-click="DeleteFlight(item,$event)">Xóa</a></td>
+                    <td><a style="text-decoration:underline;cursor:pointer;color:blue" ng-click="UpdateFlight(item)">Sửa</a></td>
                 </tr>
             </tbody>
         </table>

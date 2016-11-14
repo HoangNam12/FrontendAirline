@@ -6,7 +6,7 @@
         this.GetSanBayDi = function () {
             return $http({
                 method: "get",
-                url: "http://flightreservation-1.apphb.com/Airports/sanbaydis",
+                url: "http://localhost:33790/api/v1/Airports/sanbaydis",
             }).success(function (sur) {
                 return sur.data;
             });
@@ -14,7 +14,7 @@
         this.GetSanBayDen = function (sbd) {
             return $http({
                 method: "get",
-                url: "http://flightreservation-1.apphb.com/Airports/SanBayDens?sbd=" + sbd,
+                url: "http://localhost:33790/api/v1/Airports/SanBayDens?sbd=" + sbd,
             }).success(function (sur) {
                 return sur.data;
             });
@@ -22,7 +22,7 @@
         this.GetFlight = function (ChuyenBayDi,ChuyenBayDen, SlNguoi, NgayDi,NgayVe) {
             return $http({
                 method: "get",
-                url: "http://flightreservation-1.apphb.com/Flights/Search?noidi=" + ChuyenBayDi + "&noiden=" + ChuyenBayDen + "&ngaydis=" + NgayDi + "&ngayves=" + NgayVe + "&soluong=" + SlNguoi,
+                url: "http://localhost:33790/api/v1/Flights/Search?noidi=" + ChuyenBayDi + "&noiden=" + ChuyenBayDen + "&ngaydis=" + NgayDi + "&ngayves=" + NgayVe + "&soluong=" + SlNguoi,
             }).success(function (sur) {
                 return sur.data;
             });
@@ -30,7 +30,7 @@
         this.NewBooking = function (IdFlights, Hangs, MucGias, Ngays, numberPerson) {
             return $http({
                 method: "post",
-                url: "http://flightreservation-1.apphb.com/bookings/newbooking",
+                url: "http://localhost:33790/api/v1/bookings/newbooking",
                 params: {
                     IdFlights: IdFlights,
                     Hangs: Hangs,

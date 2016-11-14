@@ -59,11 +59,12 @@
                 }
                 else
                 {
-                    $scope.dataJSON1 = JSON.parse(data.ChuyenDi);
-                    $scope.dataJSON2 = JSON.parse(data.ChuyenVe);
+                    var tempJsonBay = JSON.parse(data);
+                    $scope.dataJSON1 = JSON.parse(tempJsonBay.ChuyenDi);
+                    $scope.dataJSON2 = JSON.parse(tempJsonBay.ChuyenVe);
                     $scope.chuyendiVisible = true;
                     $scope.chuyenveVisible = true;
-                    if (JSON.parse(data.ChuyenDi).length <= 0) {
+                    if (JSON.parse(tempJsonBay.ChuyenDi).length <= 0) {
                         $scope.buttonBooking = false;
                     }
                     else {
