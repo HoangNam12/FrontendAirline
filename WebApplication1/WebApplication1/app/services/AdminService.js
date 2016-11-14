@@ -8,7 +8,7 @@
            
                 return $http({
                     method: "get",
-                    url: "http://localhost:33790/api/v1/session/checktoken",
+                    url: "http://flightreservation-1.apphb.com/api/v1/session/checktoken",
                     params:{
                         token: token
                     }
@@ -26,7 +26,7 @@
                     Token:token
                 },
                 method: "get",
-                url: "http://localhost:33790/api/v1/Flights/ChangBays",
+                url: "http://flightreservation-1.apphb.com/api/v1/Flights/ChangBays",
             }).success(function (sur) {
                 return sur.data
             });
@@ -38,7 +38,7 @@
                     Token: token
                 },
                 method: "delete",
-                url: "http://localhost:33790/api/v1/Flights/AbolitionFlight",
+                url: "http://flightreservation-1.apphb.com/api/v1/Flights/AbolitionFlight",
                 params:
                     {
                         Id: Id,
@@ -57,7 +57,7 @@
                     Token: token
                 },
                 method: "put",
-                url: "http://localhost:33790/api/v1/Flights/UpdateFlight",
+                url: "http://flightreservation-1.apphb.com/api/v1/Flights/UpdateFlight",
                 params:
                     {
                         IdC: idc,
@@ -85,7 +85,7 @@
                     Token: token
                 },
                 method: "post",
-                url: "http://localhost:33790/api/v1/Flights/ThemChangBay",
+                url: "http://flightreservation-1.apphb.com/api/v1/Flights/ThemChangBay",
                 params:
                     {
                         noidi: noidi,

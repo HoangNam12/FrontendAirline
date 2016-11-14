@@ -188,8 +188,10 @@
     <Content Include="app\controllers\logInController.js" />
     <Content Include="app\directives\compareToDirective.js" />
     <Content Include="app\services\AdminService.js" />
+    <Content Include="app\services\authentication.service.js" />
     <Content Include="app\services\findFlightService.js" />
     <Content Include="app\services\informationBookService.js" />
+    <Content Include="app\services\loginService.js" />
     <Content Include="app\views\changbay.html" />
     <Content Include="app\views\findflight.html" />
     <Content Include="app\views\home.html" />

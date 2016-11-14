@@ -7,7 +7,7 @@
         this.Authenticate = function (autho) {
             return $http({
                 method: "post",
-                url: "http://localhost:33790/api/v1/Authenticate/Authenticate",
+                url: "http://flightreservation-1.apphb.com/api/v1/Authenticate/Authenticate",
                 headers: {
                     'Authorization':autho
                 }
